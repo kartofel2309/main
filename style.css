@@ -1,0 +1,194 @@
+:root {
+  --primary: #2f6fb0;
+  --primary-dark: #1f4f82;
+  --primary-soft: #e8f1fb;
+  --text: #1f2933;
+  --text-muted: #5b6770;
+  --surface: rgba(255, 255, 255, 0.92);
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --radius: 14px;
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 48px 20px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background-color: #f2f2f2;
+  background-image: url("realistic-solid-gold-background-free-vector.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin: 0;
+  padding: 12px 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+p {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  background-color: var(--surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+#token-count {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+#create-token {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(47, 111, 176, 0.35);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+#create-token:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(47, 111, 176, 0.45);
+}
+
+#create-token:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(47, 111, 176, 0.3);
+}
+
+#create-token:focus-visible {
+  outline: 3px solid rgba(47, 111, 176, 0.5);
+  outline-offset: 3px;
+}
+
+#tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+#tasks li {
+  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+#tasks li:last-child {
+  border-bottom: none;
+}
+
+#tasks li:hover {
+  background-color: var(--primary-soft);
+}
+
+#tasks li:active {
+  background-color: #d6e6f7;
+  transform: scale(0.98);
+}
+
+#tasks li a {
+  display: block;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: color var(--transition), padding-left var(--transition);
+}
+
+#tasks li a:hover {
+  color: var(--primary-dark);
+  padding-left: 24px;
+}
+
+#tasks li a:focus-visible {
+  outline: 3px solid rgba(47, 111, 176, 0.5);
+  outline-offset: -3px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #tasks li a {
+    padding: 12px 14px;
+  }
+}
+
+.tracks {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-weight: 500;
+}
+
+.buy-track {
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.buy-track:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(47, 111, 176, 0.4);
+}
+
+.buy-track.playing {
+  background: linear-gradient(135deg, #c0392b, #922b21);
+}
+
+.buy-track:focus-visible {
+  outline: 3px solid rgba(47, 111, 176, 0.5);
+  outline-offset: 3px;
+}
